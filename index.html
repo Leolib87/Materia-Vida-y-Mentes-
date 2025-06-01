@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Laboratorio Avanzada</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Gestión de Inventario de Laboratorio 🔬</h1>
+    </header>
+
+    <main>
+        <section id="laboratorio-histologia">
+            <h2>Histología</h2>
+            <div class="categoria">
+                <h3>Materiales</h3>
+                <ul></ul>
+            </div>
+            <div class="categoria">
+                <h3>Reactivos</h3>
+                <ul></ul>
+            </div>
+            <div class="categoria">
+                <h3>Insumos</h3>
+                <ul></ul>
+            </div>
+            <div class="categoria">
+                <h3>Equipos</h3>
+                <ul></ul>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="laboratorio-biologia-celular">
+            <h2>Biología Celular</h2>
+            <div class="categoria">
+                <h3>Materiales</h3>
+                <ul></ul>
+            </div>
+            <div class="categoria">
+                <h3>Reactivos</h3>
+                <ul></ul>
+            </div>
+            <div class="categoria">
+                <h3>Insumos</h3>
+                <ul></ul>
+            </div>
+            <div class="categoria">
+                <h3>Equipos</h3>
+                <ul></ul>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="laboratorio-biologia-molecular">
+            <h2>Biología Molecular</h2>
+            <div class="categoria">
+                <h3>Materiales</h3>
+                <ul></ul>
+            </div>
+            <div class="categoria">
+                <h3>Reactivos</h3>
+                <ul></ul>
+            </div>
+            <div class="categoria">
+                <h3>Insumos</h3>
+                <ul></ul>
+            </div>
+            <div class="categoria">
+                <h3>Equipos</h3>
+                <ul></ul>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="calculadora-compras">
+            <h2>Calculadora de Compras 🛒</h2>
+            <div>
+                <label for="item-nombre">Nombre del Item (Reactivo, Material, Insumo o Equipo):</label>
+                <input type="text" id="item-nombre" name="item-nombre" placeholder="Ej: Etanol 99%">
+            </div>
+            <div>
+                <label for="item-valor">Valor Unitario (CLP):</label>
+                <input type="number" id="item-valor" name="item-valor" min="0" step="any" placeholder="Ej: 5000">
+            </div>
+            <button id="agregar-item-btn">Agregar a la Lista de Compra</button>
+
+            <h3>Lista de Compra Propuesta:</h3>
+            <ul id="lista-compra">
+                </ul>
+            <p><strong>Valor Total Estimado: CLP <span id="valor-total">0.00</span></strong></p>
+            <button id="limpiar-lista-btn">Limpiar Lista</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Gestión de Laboratorio Avanzada</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
