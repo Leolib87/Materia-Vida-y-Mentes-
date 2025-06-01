@@ -1,208 +1,277 @@
+/* --- Estilos Globales y Variables --- */
+:root {
+    --bg-primary: #111827;      /* Tailwind gray-900 */
+    --bg-secondary: #1f2937;    /* Tailwind gray-800 */
+    --bg-card: #374151;         /* Tailwind gray-700 */
+    --bg-input: #4b5563;        /* Tailwind gray-600 (para inputs) */
+    --text-primary: #f3f4f6;    /* Tailwind gray-100 */
+    --text-secondary: #d1d5db;  /* Tailwind gray-300 */
+    --text-muted: #9ca3af;      /* Tailwind gray-400 */
+    --border-color: #4b5563;    /* Tailwind gray-600 */
+    --border-light: #6b7280;    /* Tailwind gray-500 */
+    --accent-primary: #3b82f6;  /* Tailwind blue-500 */
+    --accent-hover: #2563eb;    /* Tailwind blue-600 */
+    --success-color: #10b981;   /* Tailwind green-500 */
+    --success-hover: #059669;   /* Tailwind green-600 */
+    --danger-color: #ef4444;    /* Tailwind red-500 */
+    --danger-hover: #dc2626;    /* Tailwind red-600 */
+    --font-family: 'Inter', sans-serif;
+    --transition-speed: 0.25s;
+    --card-shadow: 0 10px 15px -3px rgba(0,0,0,0.25), 0 4px 6px -2px rgba(0,0,0,0.2);
+    --input-shadow-focus: 0 0 0 3px rgba(59, 130, 246, 0.4);
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-family);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
-    color: #343a40;
 }
 
-header {
-    background-color: #005f73; /* Azul petróleo oscuro */
-    color: #ffffff;
-    padding: 1.5rem 0;
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem; /* Espacio lateral responsivo */
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); border-radius: 10px; }
+::-webkit-scrollbar-thumb { background: var(--accent-primary); border-radius: 10px; border: 2px solid var(--bg-secondary); }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-hover); }
+
+/* --- Encabezado de Aplicación --- */
+.app-header {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--accent-primary) 100%);
+    color: var(--text-primary);
+    padding: 2.5rem 0;
+    margin-bottom: 2rem;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.app-header .container { text-align: center; }
+.main-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); }
+.main-title .header-icon { margin-right: 10px; }
+.subtitle { font-size: 1.1rem; color: var(--text-secondary); opacity: 0.9; margin-top: 0; }
+
+
+/* --- Tarjetas y Secciones --- */
+.card {
+    background-color: var(--bg-card);
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: var(--card-shadow);
+    padding: 1.5rem; /* p-6 */
+    margin-bottom: 2rem; /* mb-8 */
+    border: 1px solid var(--border-color);
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.2rem;
-    font-weight: 300;
+.section-title {
+    font-size: 1.75rem; /* text-2xl */
+    font-weight: 600; /* font-semibold */
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--accent-primary);
+    display: inline-block;
+}
+.section-title .fas { margin-right: 0.5rem; }
+
+.section-subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem; /* mb-6 */
+    font-size: 0.95rem;
 }
 
-main {
-    padding: 20px;
-    max-width: 1300px;
-    margin: 30px auto;
-    background-color: #ffffff;
-    box-shadow: 0 0 15px rgba(0,0,0,0.07);
-    border-radius: 8px;
+/* --- Desplegables (Accordions) Estilo Tarjeta --- */
+.lab-area-section.card { padding: 0; overflow: hidden; } /* La tarjeta principal no necesita padding si el summary lo tiene */
+
+.lab-area-details > .lab-area-summary {
+    padding: 1.25rem 1.5rem;
+    background-color: var(--bg-secondary); /* Un poco más oscuro para el header del área */
+    border-bottom: 1px solid var(--border-color); /* Separador si está cerrado */
+}
+.lab-area-details[open] > .lab-area-summary {
+    border-bottom-color: var(--accent-primary);
 }
 
-section {
-    margin-bottom: 35px;
-    padding: 25px;
-    border: 1px solid #dee2e6;
-    border-radius: 6px;
-    background-color: #fff;
-}
-
-section h2 {
-    color: #005f73;
-    text-align: center;
-    margin-bottom: 25px;
-    font-size: 1.8rem;
-    font-weight: 500;
-    border-bottom: 2px solid #94d2bd; /* Verde azulado claro */
-    padding-bottom: 10px;
-}
-
-.categoria {
-    margin-bottom: 25px;
-    padding: 20px;
-    background-color: #e9ecef;
-    border-radius: 5px;
-    border-left: 5px solid #0a9396; /* Verde azulado medio */
-}
-
-.categoria h3 {
-    margin-top: 0;
-    margin-bottom: 15px;
-    color: #003440; /* Azul petróleo muy oscuro */
-    font-size: 1.4rem;
-}
-
-.categoria ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-.categoria ul li {
-    margin-bottom: 8px;
-    padding: 8px;
-    border-radius: 4px;
-    background-color: #f8f9fa;
-    border: 1px solid #ced4da;
-    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-}
-
-.categoria ul li.inventory-item:hover {
-    background-color: #e2e6ea;
-    transform: translateX(5px);
+.lab-area-summary, .categoria-summary {
+    display: flex;
+    align-items: center;
     cursor: pointer;
+    list-style: none; /* Ocultar marcador por defecto */
+    transition: background-color var(--transition-speed) ease;
+    position: relative;
 }
+.lab-area-summary::-webkit-details-marker,
+.categoria-summary::-webkit-details-marker { display: none; }
 
+.lab-area-summary:hover { background-color: lighten(var(--bg-secondary), 5%); }
 
-#calculadora-compras label {
-    display: block;
-    margin-top: 12px;
-    margin-bottom: 5px;
-    font-weight: 600;
-    color: #495057;
+.lab-area-summary h2 { font-size: 1.5rem; color: var(--accent-primary); margin: 0; flex-grow: 1; }
+.lab-area-summary h2 .area-icon { margin-right: 0.75rem; }
+
+.area-content { padding: 1.5rem; background-color: var(--bg-card); /* Contenido vuelve al color de tarjeta */ }
+
+.categoria-details {
+    background-color: var(--bg-secondary); /* Sub-desplegables un poco diferentes */
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-light);
+    overflow: hidden;
 }
+.categoria-summary { padding: 0.9rem 1.25rem; }
+.categoria-summary:hover { background-color: lighten(var(--bg-secondary), 7%); }
+.categoria-summary h3 { font-size: 1.1rem; color: var(--text-primary); margin: 0; flex-grow: 1; font-weight: 500; }
+.categoria-summary h3 .category-icon { margin-right: 0.5rem; color: var(--text-muted); }
+.categoria-details[open] > .categoria-summary h3 .category-icon { color: var(--accent-primary); }
 
-#calculadora-compras input[type="text"],
-#calculadora-compras input[type="number"] {
-    width: calc(100% - 24px);
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    box-sizing: border-box;
+.accordion-arrow {
     font-size: 1rem;
+    color: var(--text-muted);
+    transition: transform var(--transition-speed) ease-in-out;
+    margin-left: auto; /* Mover a la derecha */
+}
+details[open] > summary .accordion-arrow { transform: rotate(180deg); color: var(--accent-primary); }
+
+/* --- Lista de Inventario de Ejemplo --- */
+ul.inventory-list {
+    list-style-type: none;
+    padding: 0.75rem 0 0 0.5rem; /* Padding interno post-summary */
+    margin:0;
+}
+ul.inventory-list li {
+    padding: 0.6rem 0.9rem;
+    margin-bottom: 0.5rem;
+    background-color: var(--bg-input);
+    border-radius: 0.375rem;
+    border-left: 3px solid transparent;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+ul.inventory-list li:hover {
+    background-color: lighten(var(--bg-input), 5%);
+    border-left-color: var(--accent-primary);
+    color: var(--text-primary);
+    transform: translateX(4px);
 }
 
-#calculadora-compras input[type="text"]:focus,
-#calculadora-compras input[type="number"]:focus {
-    border-color: #0a9396;
-    box-shadow: 0 0 0 0.2rem rgba(10, 147, 150, 0.25);
+/* --- Formularios y Entradas de la Calculadora --- */
+.form-inputs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    align-items: flex-start; /* Alinea items al inicio, útil para el botón */
+}
+.form-inputs-grid label {
+    display: block;
+    color: var(--text-secondary);
+    margin-bottom: 0.4rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--bg-input);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 0.375rem; /* rounded-md */
+    box-sizing: border-box;
+    transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    font-size: 0.95rem;
+}
+.form-input:focus {
+    border-color: var(--accent-primary);
+    box-shadow: var(--input-shadow-focus);
     outline: none;
 }
+.form-inputs-grid .btn {
+    height: calc(2.25rem + 2px + 0.75rem * 2 - 0.4rem); /* Para alinear con input + label */
+    min-height: 46px; /* Aproximado para que se vea bien */
+}
+/* --- Botones --- */
+.btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 0.75rem 1.25rem;
+    border: none; border-radius: 0.375rem; cursor: pointer;
+    font-size: 0.95rem; font-weight: 500;
+    transition: background-color var(--transition-speed) ease, transform 0.15s ease, box-shadow var(--transition-speed) ease;
+    text-decoration: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.btn .fas { margin-right: 0.5rem; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.25); }
+.btn:active { transform: translateY(-1px); }
 
-#calculadora-compras button {
-    display: inline-block;
-    background-color: #0a9396; /* Verde azulado medio */
-    color: white;
-    padding: 12px 22px;
+.btn-success { background-color: var(--success-color); color: white; }
+.btn-success:hover { background-color: var(--success-hover); }
+.btn-danger { background-color: var(--danger-color); color: white; }
+.btn-danger:hover { background-color: var(--danger-hover); }
+.btn-info { background-color: var(--accent-primary); color: white; } /* Botón de información */
+.btn-info:hover { background-color: var(--accent-hover); }
+
+/* --- Tabla de Calculadora --- */
+.table-responsive-container { overflow-x: auto; }
+.styled-table {
+    width: 100%;
+    min-width: 600px; /* Para forzar scroll en pantallas pequeñas si es necesario */
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+.styled-table th, .styled-table td {
+    padding: 0.9rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+.styled-table thead th {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    border-bottom-width: 2px;
+    border-bottom-color: var(--accent-primary);
+}
+.styled-table tbody tr:nth-child(even) { background-color: rgba(31, 41, 55, 0.5); /* bg-secondary con opacidad */ }
+.styled-table tbody tr:hover { background-color: var(--bg-input); }
+.styled-table td .form-input { font-size: 0.9rem; padding: 0.5rem 0.75rem; } /* Inputs dentro de la tabla más pequeños */
+
+.styled-table .btn-remove-row {
+    background: none; border: none; color: var(--danger-color); cursor: pointer; padding: 0.25rem; font-size: 1.1rem;
+}
+.styled-table .btn-remove-row:hover { color: var(--danger-hover); transform: scale(1.1); }
+.styled-table .btn-remove-row .fas { margin-right: 0; }
+
+.styled-table tfoot td { font-weight: 600; font-size: 1rem; }
+.styled-table tfoot .grand-total-value { color: var(--success-color); font-size: 1.2rem; }
+.text-right { text-align: right !important; }
+
+/* --- Pie de Página --- */
+.app-footer {
+    background-color: var(--bg-secondary);
+    color: var(--text-muted);
     text-align: center;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-right: 10px;
-    margin-top: 10px;
-    transition: background-color 0.2s ease;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.875rem;
 }
+.app-footer .subtle-text { font-size: 0.75rem; opacity: 0.7; margin-top: 0.25rem; }
 
-#calculadora-compras button:hover {
-    background-color: #08787a; /* Un tono más oscuro */
-}
-
-#calculadora-compras button#limpiar-lista-btn {
-    background-color: #ae2012; /* Rojo oscuro */
-}
-#calculadora-compras button#limpiar-lista-btn:hover {
-    background-color: #901b0f;
-}
-
-#lista-compra {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 20px;
-    border: 1px solid #dee2e6;
-    border-radius: 4px;
-    background-color: #f8f9fa;
-}
-
-#lista-compra li {
-    padding: 10px 15px;
-    border-bottom: 1px solid #e9ecef;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#lista-compra li:last-child {
-    border-bottom: none;
-}
-
-#lista-compra .item-name {
-    flex-grow: 1;
-    margin-right: 15px;
-}
-
-#lista-compra .item-value {
-    font-weight: bold;
-    color: #007bff; /* Azul */
-    min-width: 120px; /* Alineación de precios */
-    text-align: right;
-}
-
-#lista-compra button.remove-item {
-    background-color: #ee9b00; /* Naranja */
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 0.85rem;
-    margin-left: 15px;
-    transition: background-color 0.2s ease;
-}
-
-#lista-compra button.remove-item:hover {
-    background-color: #ca6702; /* Naranja oscuro */
-}
-
-
-#valor-total {
-    font-weight: bold;
-    font-size: 1.3em;
-    color: #2a9d8f; /* Verde azulado */
-}
-
-footer {
-    text-align: center;
-    padding: 25px;
-    background-color: #343a40;
-    color: #f8f9fa;
-    margin-top: 40px;
-}
-
-hr {
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
-  margin-top: 40px;
-  margin-bottom: 40px;
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .main-title { font-size: 2rem; }
+    .subtitle { font-size: 1rem; }
+    .section-title { font-size: 1.5rem; }
+    .form-inputs-grid { grid-template-columns: 1fr; } /* Stack inputs on small screens */
+    .form-inputs-grid .btn { width: 100%; margin-top: 0.5rem; }
+    .styled-table th, .styled-table td { padding: 0.75rem 0.5rem; }
 }
