@@ -3,103 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Laboratorio Avanzada</title>
+    <title>Gestión de Laboratorio Integral - Estilo Avanzado</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header>
-        <h1>Gestión de Inventario de Laboratorio 🔬</h1>
+<body class="antialiased">
+
+    <header class="app-header">
+        <div class="container">
+            <h1 class="main-title">
+                <i class="fas fa-cogs header-icon"></i> Gestión Integral de Laboratorio
+            </h1>
+            <p class="subtitle">
+                Inventario Dinámico y Calculadora de Compras Optimizada
+            </p>
+        </div>
     </header>
 
-    <main>
-        <section id="laboratorio-histologia">
-            <h2>Histología</h2>
-            <div class="categoria">
-                <h3>Materiales</h3>
-                <ul></ul>
-            </div>
-            <div class="categoria">
-                <h3>Reactivos</h3>
-                <ul></ul>
-            </div>
-            <div class="categoria">
-                <h3>Insumos</h3>
-                <ul></ul>
-            </div>
-            <div class="categoria">
-                <h3>Equipos</h3>
-                <ul></ul>
-            </div>
+    <main class="container">
+
+        <section id="laboratorio-histologia" class="lab-area-section card">
+            <details class="lab-area-details" open>
+                <summary class="lab-area-summary">
+                    <h2><i class="fas fa-microscope area-icon"></i> Histología</h2>
+                    <i class="fas fa-chevron-down accordion-arrow"></i>
+                </summary>
+                <div class="area-content">
+                    <details class="categoria-details" data-category="Materiales"><summary class="categoria-summary"><h3><i class="fas fa-cubes-stacked category-icon"></i> Materiales</h3><i class="fas fa-chevron-down accordion-arrow"></i></summary><ul class="inventory-list"></ul></details>
+                    <details class="categoria-details" data-category="Reactivos"><summary class="categoria-summary"><h3><i class="fas fa-prescription-bottle category-icon"></i> Reactivos</h3><i class="fas fa-chevron-down accordion-arrow"></i></summary><ul class="inventory-list"></ul></details>
+                    <details class="categoria-details" data-category="Insumos"><summary class="categoria-summary"><h3><i class="fas fa-box-tissue category-icon"></i> Insumos</h3><i class="fas fa-chevron-down accordion-arrow"></i></summary><ul class="inventory-list"></ul></details>
+                    <details class="categoria-details" data-category="Equipos"><summary class="categoria-summary"><h3><i class="fas fa-tools category-icon"></i> Equipos</h3><i class="fas fa-chevron-down accordion-arrow"></i></summary><ul class="inventory-list"></ul></details>
+                </div>
+            </details>
         </section>
 
-        <hr>
-
-        <section id="laboratorio-biologia-celular">
-            <h2>Biología Celular</h2>
-            <div class="categoria">
-                <h3>Materiales</h3>
-                <ul></ul>
-            </div>
-            <div class="categoria">
-                <h3>Reactivos</h3>
-                <ul></ul>
-            </div>
-            <div class="categoria">
-                <h3>Insumos</h3>
-                <ul></ul>
-            </div>
-            <div class="categoria">
-                <h3>Equipos</h3>
-                <ul></ul>
-            </div>
+        <section id="laboratorio-biologia-celular" class="lab-area-section card">
+            <details class="lab-area-details">
+                <summary class="lab-area-summary">
+                    <h2><i class="fas fa-bacterium area-icon"></i> Biología Celular</h2>
+                    <i class="fas fa-chevron-down accordion-arrow"></i>
+                </summary>
+                <div class="area-content">
+                    <details class="categoria-details" data-category="Materiales"><summary class="categoria-summary"><h3><i class="fas fa-cubes-stacked category-icon"></i> Materiales</h3><i class="fas fa-chevron-down accordion-arrow"></i></summary><ul class="inventory-list"></ul></details>
+                    <details class="categoria-details" data-category="Reactivos"><summary class="categoria-summary"><h3><i class="fas fa-prescription-bottle category-icon"></i> Reactivos</h3><i class="fas fa-chevron-down accordion-arrow"></i></summary><ul class="inventory-list"></ul></details>
+                    <details class="categoria-details" data-category="Insumos"><summary class="categoria-summary"><h3><i class="fas fa-box-tissue category-icon"></i> Insumos</h3><i class="fas fa-chevron-down accordion-arrow"></i></summary><ul class="inventory-list"></ul></details>
+                    <details class="categoria-details" data-category="Equipos"><summary class="categoria-summary"><h3><i class="fas fa-tools category-icon"></i> Equipos</h3><i class="fas fa-chevron-down accordion-arrow"></i></summary><ul class="inventory-list"></ul></details>
+                </div>
+            </details>
         </section>
 
-        <hr>
+        <section id="laboratorio-biologia-molecular" class="lab-area-section card">
+            <details class="lab-area-details">
+                <summary class="lab-area-summary">
+                    <h2><i class="fas fa-dna area-icon"></i> Biología Molecular</h2>
+                    <i class="fas fa-chevron-down accordion-arrow"></i>
+                </summary>
+                <div class="area-content">
+                    <details class="categoria-details" data-category="Materiales"><summary class="categoria-summary"><h3><i class="fas fa-cubes-stacked category-icon"></i> Materiales</h3><i class="fas fa-chevron-down accordion-arrow"></i></summary><ul class="inventory-list"></ul></details>
+                    <details class="categoria-details" data-category="Reactivos"><summary class="categoria-summary"><h3><i class="fas fa-prescription-bottle category-icon"></i> Reactivos</h3><i class="fas fa-chevron-down accordion-arrow"></i></summary><ul class="inventory-list"></ul></details>
+                    <details class="categoria-details" data-category="Insumos"><summary class="categoria-summary"><h3><i class="fas fa-box-tissue category-icon"></i> Insumos</h3><i class="fas fa-chevron-down accordion-arrow"></i></summary><ul class="inventory-list"></ul></details>
+                    <details class="categoria-details" data-category="Equipos"><summary class="categoria-summary"><h3><i class="fas fa-tools category-icon"></i> Equipos</h3><i class="fas fa-chevron-down accordion-arrow"></i></summary><ul class="inventory-list"></ul></details>
+                </div>
+            </details>
+        </section>
+        
+        <section id="calculadora-compras" class="card">
+            <h2 class="section-title"><i class="fas fa-calculator"></i> Calculadora de Compras (CLP)</h2>
+            <p class="section-subtitle">
+                Agregue ítems para estimar el costo total de su próxima compra. Los precios son referenciales.
+            </p>
+            
+            <div class="form-inputs-grid">
+                 <div>
+                    <label for="calc-item-nombre">Nombre del Item:</label>
+                    <input type="text" id="calc-item-nombre" class="form-input" placeholder="Ej: Pipetas P1000">
+                </div>
+                <div>
+                    <label for="calc-item-cantidad">Cantidad:</label>
+                    <input type="number" id="calc-item-cantidad" class="form-input" value="1" min="1">
+                </div>
+                <div>
+                    <label for="calc-item-precio">Precio Unitario (CLP):</label>
+                    <input type="number" id="calc-item-precio" class="form-input" placeholder="Ej: 25000" min="0" step="any">
+                </div>
+                <button id="calc-add-item-btn" class="btn btn-success self-end">
+                    <i class="fas fa-plus-circle"></i> Agregar Ítem
+                </button>
+            </div>
 
-        <section id="laboratorio-biologia-molecular">
-            <h2>Biología Molecular</h2>
-            <div class="categoria">
-                <h3>Materiales</h3>
-                <ul></ul>
+            <div class="table-responsive-container mt-6">
+                <table id="tabla-calculadora" class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Ítem</th>
+                            <th>Cantidad</th>
+                            <th>Precio Unitario</th>
+                            <th>Costo Total Ítem</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" class="text-right">Costo Total Estimado (CLP):</td>
+                            <td id="calc-grand-total" class="grand-total-value">0.00</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
             </div>
-            <div class="categoria">
-                <h3>Reactivos</h3>
-                <ul></ul>
-            </div>
-            <div class="categoria">
-                <h3>Insumos</h3>
-                <ul></ul>
-            </div>
-            <div class="categoria">
-                <h3>Equipos</h3>
-                <ul></ul>
-            </div>
+             <button id="calc-clear-list-btn" class="btn btn-danger mt-6">
+                <i class="fas fa-trash-alt"></i> Limpiar Lista Completa
+            </button>
         </section>
 
-        <hr>
-
-        <section id="calculadora-compras">
-            <h2>Calculadora de Compras 🛒</h2>
-            <div>
-                <label for="item-nombre">Nombre del Item (Reactivo, Material, Insumo o Equipo):</label>
-                <input type="text" id="item-nombre" name="item-nombre" placeholder="Ej: Etanol 99%">
-            </div>
-            <div>
-                <label for="item-valor">Valor Unitario (CLP):</label>
-                <input type="number" id="item-valor" name="item-valor" min="0" step="any" placeholder="Ej: 5000">
-            </div>
-            <button id="agregar-item-btn">Agregar a la Lista de Compra</button>
-
-            <h3>Lista de Compra Propuesta:</h3>
-            <ul id="lista-compra">
-                </ul>
-            <p><strong>Valor Total Estimado: CLP <span id="valor-total">0.00</span></strong></p>
-            <button id="limpiar-lista-btn">Limpiar Lista</button>
-        </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Gestión de Laboratorio Avanzada</p>
+    <footer class="app-footer">
+        <p>&copy; <span id="currentYear"></span> Gestión Integral de Laboratorio. Optimizada para profesionales.</p>
+        <p class_subtle-text>La información y precios son referenciales.</p>
     </footer>
 
     <script src="script.js"></script>
